@@ -1,0 +1,19 @@
+{
+    // PHPUnit extension: https://github.com/elonmallin/vscode-phpunit
+    "phpunit.phpunit": "vendor/bin/phpunit",
+    "phpunit.command": "docker-compose exec php",
+    "phpunit.driverPriority": ["Command"],
+    "phpunit.args": [
+        "--no-logging"
+    ],
+    "phpunit.paths": {
+        "${workspaceFolder}": "/var/www"
+    },
+
+    // Better PHPUnit extension: https://github.com/calebporzio/better-phpunit
+    "better-phpunit.docker.enable": true,
+    "better-phpunit.docker.command": "docker-compose exec php",
+    "better-phpunit.docker.paths": {
+        "${workspaceFolder}": "/var/www"
+    }
+}

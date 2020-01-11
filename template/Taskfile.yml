@@ -1,0 +1,82 @@
+version: "2"
+
+silent: true
+
+tasks:
+
+########################################################################################################################
+#
+# TOC
+#
+########################################################################################################################
+#
+# 1. COMPOSER
+# 2. MISCELLANEOUS
+#
+########################################################################################################################
+
+tasks:
+  ######################################################################################################################
+  #
+  #  1. COMPOSER
+  #
+  ######################################################################################################################
+
+  c:update:
+    desc: Run composer update
+    cmds:
+      - task: c:exec
+        vars:
+          SUBCMD: update
+
+  c:install:
+    desc: Run composer install
+    cmds:
+      - task: c:exec
+        vars:
+          SUBCMD: install
+
+  c:test:
+    desc: Run PHPUnit tests
+    cmds:
+      - docker run
+        --interactive
+        --tty
+        --rm
+        --volume `pwd`:/var/www
+        ilyes512/php74-fpm:alpine-latest-builder
+        composer test
+
+  c:exec:
+    preconditions:
+      - sh: test {{`'{{.SUBCMD}}' = 'install' -o '{{.SUBCMD}}' = 'update'`}}
+        msg: SUBCMD value needs to be either 'install' or 'update'
+    cmds:
+      - docker run
+        --interactive
+        --tty
+        --rm
+        --volume `pwd`:/var/www
+        --volume $HOME/.composer/cache:/root/.composer/cache
+        ilyes512/php74-fpm:alpine-latest-builder
+        composer {{`{{.SUBCMD}}`}}
+        --no-progress
+        --prefer-dist
+        --no-interaction
+        --no-suggest
+
+  ######################################################################################################################
+  #
+  #  2. MISCELLANEOUS
+  #
+  ######################################################################################################################
+
+  cleanup:
+    desc: Cleanup generated files and vendor files
+    cmds:
+      - rm -rf
+        vendor
+        coverage
+        .phpunit.result.cache
+        composer.lock
+        && printf "%s\n" "Successfully removed vendor/generated files..."

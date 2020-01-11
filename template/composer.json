@@ -1,0 +1,43 @@
+{
+    "name": "ilyes512/{{kebabcase Name}}",
+    "description": "{{Description}}",
+    "type": "library",
+    "homepage": "https://github.com/Ilyes512/{{kebabcase Name}}",
+    "license": "{{License}}",
+    "authors": [
+        {
+            "name": "Ilyes512",
+            "email": "ilyes.ahidar@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "~7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5.2",
+        "mockery/mockery": "^1.3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ilyes512\\{{camelcase (snakecase Name)}}\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ilyes512\\{{camelcase (snakecase Name)}}\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs src tests",
+        "fix-style": "phpcbf src tests"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
