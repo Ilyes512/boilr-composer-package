@@ -3,7 +3,7 @@
     "description": "{{Description}}",
     "type": "library",
     "homepage": "https://github.com/Ilyes512/{{kebabcase Name}}",
-    "license": "{{License}}",
+    "license": "MIT",
     "authors": [
         {
             "name": "Ilyes512",
