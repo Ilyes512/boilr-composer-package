@@ -3,9 +3,7 @@
     "phpunit.phpunit": "vendor/bin/phpunit",
     "phpunit.command": "docker-compose exec php",
     "phpunit.driverPriority": ["Command"],
-    "phpunit.args": [
-        "--no-logging"
-    ],
+    "phpunit.args": ["--no-logging"],
     "phpunit.paths": {
         "${workspaceFolder}": "/var/www"
     },
