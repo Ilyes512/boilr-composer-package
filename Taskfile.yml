@@ -1,0 +1,14 @@
+version: "2"
+
+silent: true
+
+tasks:
+  update:
+    desc: Update boilr template named as 'package-skeleton'
+    cmds:
+      - boilr template save . package-skeleton -f
+
+  remove-ds-store:
+    desc: Remove all .DS_Store files in this project
+    cmds:
+      - find . -name .DS_Store -type f -delete
