@@ -1,4 +1,5 @@
 {
-    "Name": "Package Skeleton",
-    "Description": "Skafolled using Ilyes512/boilr-composer-package-skeleton"
+    "PackageName": "Foobar",
+    "Vendor": "Ilyes512",
+    "Author": "Ilyes Ahidar"
 }

@@ -1,21 +1,26 @@
-# Boilr Composer Package Skeleton
+# Ilyes512/boilr-composer-package
 
-A Boilr template for PHP Composer packages.
+A [Boilr](https://github.com/Ilyes512/boilr) template for PHP Composer packages.
 
-## Requirement
+## Install/Usage instructions
 
-Install Boilr (https://github.com/Ilyes512/boilr):
+**Requirements:**
+- [Boilr](https://github.com/Ilyes512/boilr#installation)
+- macOS only: CoreUtils (`brew install coreutils`)
 
-```bash
-# Macos
-brew tap Ilyes512/boilr
-brew install Ilyes512/boilr/boilr
-```
+## Overview task commands
 
-Or download it from the releases page: https://github.com/Ilyes512/boilr/releases
-
-## Adding the template to Boilr
+An overview of all Task commands:
 
 ```bash
-boilr template save package-skeleton . -f
+$ task --list
+
+task: Available tasks for this project:
+* test:         Test the boilr template
+* test:cleanup: Cleanup boilr template test files
+* update:       Update the boilr template
 ```
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
