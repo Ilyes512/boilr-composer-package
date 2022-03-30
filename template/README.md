@@ -1,20 +1,19 @@
-# Ilyes512/{{camelcase (snakecase Name)}}
+# {{ lower Vendor }}/{{ kebabcase PackageName }}
 
-{{Description}}
+A {{ PackageName }} package.
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require Ilyes512/{{camelcase (snakecase Name)}}
+composer require {{ lower Vendor }}/{{ kebabcase PackageName }}
 ```
 
 ## Usage
 
 ```php
-$hello = new Ilyes512\{{camelcase (snakecase Name)}};
-echo $hello->hello();
+$example = new {{ camelcase (snakecase Vendor) }}\{{ camelcase (snakecase PackageName) }}();
 ```
 
 ## License

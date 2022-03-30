@@ -1,36 +1,50 @@
 {
-    "name": "ilyes512/{{kebabcase Name}}",
-    "description": "{{Description}}",
+    "name": "{{ lower Vendor }}/{{ kebabcase PackageName }}",
     "type": "library",
-    "homepage": "https://github.com/Ilyes512/{{kebabcase Name}}",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Ilyes512",
-            "email": "ilyes.ahidar@gmail.com"
-        }
+    "description": "A {{ PackageName }} package.",
+    "keywords": [
+        "package",
+        "{{ PackageName }}"
     ],
+    "license": "MIT",
     "require": {
-        "php": "~7.4"
+        "php": ">=8.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.5.2",
-        "mockery/mockery": "^1.3.1"
+        "ext-xdebug": "*",
+        "ilyes512/code-style": "dev-strict",
+        "mockery/mockery": "^1.5.0",
+        "overtrue/phplint": "^4.1.0",
+        "phpstan/phpstan": "^1.5.2",
+        "phpunit/phpunit": "^9.5.19"
     },
     "autoload": {
         "psr-4": {
-            "Ilyes512\\{{camelcase (snakecase Name)}}\\": "src"
+            "{{ camelcase (snakecase Vendor) }}\\{{ camelcase (snakecase PackageName) }}\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Ilyes512\\{{camelcase (snakecase Name)}}\\": "tests"
+            "{{ camelcase (snakecase Vendor) }}\\{{ camelcase (snakecase PackageName) }}\\Tests\\": "tests"
         }
     },
     "scripts": {
+        "lint": "XDEBUG_MODE=off phplint --exclude=vendor .",
+        "checkstyle": "XDEBUG_MODE=off ecs check",
+        "fixstyle": "XDEBUG_MODE=off ecs check --fix",
+        "typecheck": "phpstan analyse",
         "test": "phpunit",
-        "check-style": "phpcs src tests",
-        "fix-style": "phpcbf src tests"
+        "xtest": "XDEBUG_TRIGGER=1 phpunit --testdox",
+        "report": "XDEBUG_MODE=coverage phpunit --testdox --coverage-text --coverage-html coverage/html",
+        "outdatedvendor": "composer outdated --direct",
+        "checkall": [
+            "@lint",
+            "@checkstyle",
+            "@typecheck",
+            "@test",
+            "@outdatedvendor --minor-only --strict",
+            "@outdatedvendor"
+        ]
     },
     "extra": {
         "branch-alias": {
@@ -38,6 +52,11 @@
         }
     },
     "config": {
-        "sort-packages": true
-    }
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }

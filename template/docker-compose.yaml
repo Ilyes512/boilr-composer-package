@@ -1,8 +1,0 @@
-version: "3.7"
-services:
-  php:
-    image: ilyes512/php74-fpm:alpine-${IMAGE_TAG:-latest}-builder
-    volumes:
-      - ./:/var/www/
-      - $HOME/auth.json:/root/auth.json:ro
-      - $HOME/.composer/cache:/root/.composer/cache
