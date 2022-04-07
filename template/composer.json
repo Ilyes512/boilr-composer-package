@@ -16,7 +16,7 @@
         "mockery/mockery": "^1.5.0",
         "overtrue/phplint": "^4.1.0",
         "phpstan/phpstan": "^1.5.2",
-        "phpunit/phpunit": "^9.5.19",
+        "pestphp/pest": "^1.21.2",
         "symfony/var-dumper": "^6.0"
     },
     "autoload": {
@@ -55,7 +55,8 @@
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "pestphp/pest-plugin": true
         }
     },
     "minimum-stability": "stable",
