@@ -14,7 +14,7 @@
         "ext-xdebug": "*",
         "ilyes512/code-style": "dev-strict",
         "mockery/mockery": "^1.5.0",
-        "overtrue/phplint": "^4.1.0",
+        "overtrue/phplint": "^5.0.0",
         "phpstan/phpstan": "^1.5.2",
         "pestphp/pest": "^1.21.2",
         "symfony/var-dumper": "^6.0"
