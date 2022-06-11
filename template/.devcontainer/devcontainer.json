@@ -5,7 +5,7 @@
     "service": "php",
     "workspaceFolder": "/workspace",
     "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.defaultProfile.linux": "bash"
     },
     // "shutdownAction": "none",
     "extensions": [
@@ -15,6 +15,6 @@
         "xdebug.php-debug",
         "Kasik96.latte",
         "EditorConfig.EditorConfig",
-        "mhutchie.git-graph",
+        "mhutchie.git-graph"
     ]
 }
