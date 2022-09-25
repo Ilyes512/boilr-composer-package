@@ -6,7 +6,7 @@ namespace {{ camelcase (snakecase Vendor) }}\{{ camelcase (snakecase PackageName
 
 class {{ camelcase (snakecase PackageName) }}Test extends TestCase
 {
-    public function test_example(): void
+    public function testExample(): void
     {
         $this->assertTrue(true);
     }
