@@ -33,7 +33,7 @@
         "lint": "XDEBUG_MODE=off phplint --exclude=vendor .",
         "checkstyle": "XDEBUG_MODE=off ecs check",
         "fixstyle": "XDEBUG_MODE=off ecs check --fix",
-        "typecheck": "XDEBUG_MODE=off phpstan analyse",
+        "checktype": "XDEBUG_MODE=off phpstan analyse",
         "test": "XDEBUG_MODE=off phpunit --testdox",
         "xtest": "XDEBUG_MODE=develop,debug XDEBUG_SESSION=1 phpunit --testdox",
         "report": "XDEBUG_MODE=coverage phpunit --testdox --coverage-text --coverage-html coverage/html",
