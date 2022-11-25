@@ -6,3 +6,4 @@ parameters:
 
 includes:
   - phpstan-baseline.neon
+  - vendor/phpstan/phpstan-mockery/extension.neon
