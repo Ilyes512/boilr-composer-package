@@ -41,7 +41,7 @@
         "checkall": [
             "@lint",
             "@checkstyle",
-            "@typecheck",
+            "@checktype",
             "@test",
             "@outdatedvendor --minor-only --strict",
             "@outdatedvendor"
