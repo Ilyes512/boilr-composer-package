@@ -4,17 +4,20 @@
     "dockerComposeFile": ["../docker-compose.yml"],
     "service": "php",
     "workspaceFolder": "/workspace",
-    "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash"
-    },
-    // "shutdownAction": "none",
-    "extensions": [
-        "bmewburn.vscode-intelephense-client",
-        "redhat.vscode-yaml",
-        "mehedidracula.php-namespace-resolver",
-        "xdebug.php-debug",
-        "Kasik96.latte",
-        "EditorConfig.EditorConfig",
-        "mhutchie.git-graph"
-    ]
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash"
+            },
+            "extensions": [
+                "bmewburn.vscode-intelephense-client",
+                "redhat.vscode-yaml",
+                "mehedidracula.php-namespace-resolver",
+                "xdebug.php-debug",
+                "Kasik96.latte",
+                "EditorConfig.EditorConfig",
+                "mhutchie.git-graph"
+            ]
+        }
+    }
 }
