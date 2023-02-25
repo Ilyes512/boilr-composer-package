@@ -24,7 +24,7 @@ tasks:
   dc:down:
     desc: Cleanup Devcontainer including volumes
     cmds:
-      - docker-compose down --volumes
+      - docker compose down --volumes
 
   cleanup:
     desc: Cleanup generated files and vendor files
