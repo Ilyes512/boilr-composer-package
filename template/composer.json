@@ -17,7 +17,7 @@
         "overtrue/phplint": "^9.0.4",
         "phpstan/phpstan": "^1.5.2",
         "phpstan/phpstan-mockery": "^1.1.0",
-        "phpunit/phpunit": "^10.0.12",
+        "phpunit/phpunit": "^10.5",
         "symfony/var-dumper": "^7.0"
     },
     "autoload": {
@@ -36,7 +36,7 @@
         "fixstyle": "XDEBUG_MODE=off ecs check --fix",
         "checktype": "XDEBUG_MODE=off phpstan analyse",
         "test": "XDEBUG_MODE=off phpunit --testdox",
-        "xtest": "XDEBUG_MODE=develop,debug XDEBUG_SESSION=1 phpunit --testdox",
+        "xtest": "XDEBUG_MODE=develop,debug XDEBUG_SESSION=1 phpunit",
         "report": "XDEBUG_MODE=coverage phpunit --testdox --coverage-text --coverage-html coverage/html",
         "outdatedvendor": "XDEBUG_MODE=off composer outdated --direct",
         "checkall": [
