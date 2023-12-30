@@ -20,5 +20,9 @@
                 "mhutchie.git-graph"
             ]
         }
+    },
+    "features": {
+        "ghcr.io/devcontainers-contrib/features/go-task:1": {},
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
     }
 }
