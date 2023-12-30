@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace {{ camelcase (snakecase Vendor) }}\{{ camelcase (snakecase PackageName) }}\Tests\Unit;
+namespace {{ camelcase (snakecase Vendor) }}\{{ camelcase (snakecase PackageName) }}Bundle\Tests\Unit;
 
 class {{ camelcase (snakecase PackageName) }}Test extends TestCase
 {

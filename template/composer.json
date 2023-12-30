@@ -4,7 +4,10 @@
     "description": "A {{ PackageName }} package.",
     "keywords": [
         "package",
-        "{{ PackageName }}"
+        "{{ PackageName }}",
+        "symfony",
+        "bundle",
+        "symfony-bundle"
     ],
     "license": "MIT",
     "require": {
@@ -18,16 +21,17 @@
         "phpstan/phpstan": "^1.5.2",
         "phpstan/phpstan-mockery": "^1.1.0",
         "phpunit/phpunit": "^10.5",
+        "symfony/http-kernel": "^7.0",
         "symfony/var-dumper": "^7.0"
     },
     "autoload": {
         "psr-4": {
-            "{{ camelcase (snakecase Vendor) }}\\{{ camelcase (snakecase PackageName) }}\\": "src"
+            "{{ camelcase (snakecase Vendor) }}\\{{ camelcase (snakecase PackageName) }}Bundle\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "{{ camelcase (snakecase Vendor) }}\\{{ camelcase (snakecase PackageName) }}\\Tests\\": "tests"
+            "{{ camelcase (snakecase Vendor) }}\\{{ camelcase (snakecase PackageName) }}Bundle\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -48,17 +52,25 @@
             "@outdatedvendor"
         ]
     },
+    "scripts-descriptions": {
+        "lint": "Check all php files for syntax errors.",
+        "checkstyle": "Report on code style violations (without fixing it).",
+        "fixstyle": "Fixes code style violations.",
+        "checkall": "Run all code checkers (lint, checkstyle, outdated, ...).",
+
+        DO THE REST
+    },
     "extra": {
         "branch-alias": {
             "dev-main": "1.0-dev"
         }
     },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "config": {
         "sort-packages": true,
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
         }
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    }
 }

@@ -1,6 +1,6 @@
 # {{ lower Vendor }}/{{ kebabcase PackageName }}
 
-A {{ PackageName }} package.
+A {{ PackageName }} Symfony bundle package.
 
 ## Installation
 
