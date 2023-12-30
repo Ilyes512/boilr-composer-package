@@ -20,4 +20,4 @@
 /phpunit.xml.dist           export-ignore
 /Taskfile.dist.yml          export-ignore
 /Taskfile.yml               export-ignore
-/docker-compose.yml         export-ignore
+/compose.yml                export-ignore

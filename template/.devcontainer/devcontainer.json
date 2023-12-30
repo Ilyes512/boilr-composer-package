@@ -1,7 +1,7 @@
 {
     "name": "{{ kebabcase PackageName }}",
     "remoteUser": "code",
-    "dockerComposeFile": ["../docker-compose.yml"],
+    "dockerComposeFile": ["../compose.yml"],
     "service": "php",
     "workspaceFolder": "/workspace",
     "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
