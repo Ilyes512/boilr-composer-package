@@ -1,4 +1,6 @@
-version: "3.7"
+volumes:
+  vscode-extensions:
+
 services:
   php:
     image: ${COMPOSE_PROJECT_NAME}-php-vscode:latest
@@ -15,6 +17,3 @@ services:
       - .:/workspace:delegated
       - vscode-extensions:/home/code/.vscode-server/extensions
       - ./.devcontainer/050-xdebug.ini:/usr/local/etc/php/conf.d/050-xdebug.ini
-
-volumes:
-  vscode-extensions:
