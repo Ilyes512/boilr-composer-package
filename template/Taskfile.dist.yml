@@ -51,7 +51,7 @@ tasks:
         --interactive
         --tty
         --rm
-        --volume {{.LOCAL_PWD}}:/workdir
+        {{`--volume {{.LOCAL_PWD}}:/workdir`}}
         {{`davidanson/markdownlint-cli2:{{.MARKDOWNLINT_VERSION}}`}}
         {{`{{.CLI_ARGS}}`}}
 
