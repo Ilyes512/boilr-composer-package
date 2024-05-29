@@ -8,17 +8,18 @@
     ],
     "license": "MIT",
     "require": {
-        "php": ">=8.1"
+        "php": ">=8.3"
     },
     "require-dev": {
         "ext-xdebug": "*",
-        "ilyes512/code-style": "1.0.0-alpha.2",
-        "mockery/mockery": "^1.5.0",
-        "overtrue/phplint": "^9.0.4",
-        "phpstan/phpstan": "^1.5.2",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "ilyes512/code-style": "^2.0-dev",
+        "mockery/mockery": "^1.6",
+        "overtrue/phplint": "^9.3.0",
+        "phpstan/phpstan": "^1.11",
         "phpstan/phpstan-mockery": "^1.1.0",
-        "phpunit/phpunit": "^10.0.12",
-        "symfony/var-dumper": "^6.0"
+        "phpunit/phpunit": "^11.1",
+        "symfony/var-dumper": "^7.0"
     },
     "autoload": {
         "psr-4": {
@@ -31,22 +32,25 @@
         }
     },
     "scripts": {
-        "lint": "XDEBUG_MODE=off phplint --exclude=vendor .",
-        "checkstyle": "XDEBUG_MODE=off ecs check",
-        "fixstyle": "XDEBUG_MODE=off ecs check --fix",
-        "checktype": "XDEBUG_MODE=off phpstan analyse",
-        "test": "XDEBUG_MODE=off phpunit --testdox",
-        "xtest": "XDEBUG_MODE=develop,debug XDEBUG_SESSION=1 phpunit --testdox",
-        "report": "XDEBUG_MODE=coverage phpunit --testdox --coverage-text --coverage-html coverage/html",
-        "outdatedvendor": "XDEBUG_MODE=off composer outdated --direct",
         "checkall": [
+            "composer validate",
             "@lint",
             "@checkstyle",
             "@checktype",
-            "@test",
-            "@outdatedvendor --minor-only --strict",
-            "@outdatedvendor"
-        ]
+            "@test"
+        ],
+        "lint": "XDEBUG_MODE=off phplint --exclude=vendor .",
+        "test": [
+            "Composer\\Config::disableProcessTimeout",
+            "XDEBUG_MODE=off phpunit -d --without-creating-snapshots"
+        ],
+        "test-report": [
+            "Composer\\Config::disableProcessTimeout",
+            "XDEBUG_MODE=off php -dpcov.enabled=1 -dpcov.directory=. vendor/bin/phpunit -d --without-creating-snapshots --coverage-text --coverage-html coverage/html"
+        ],
+        "checkstyle": "XDEBUG_MODE=off phpcs -n",
+        "fixstyle": "XDEBUG_MODE=off phpcbf -n",
+        "checktype": "XDEBUG_MODE=off phpstan analyse --memory-limit=-1 -v"
     },
     "extra": {
         "branch-alias": {
@@ -60,5 +64,14 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "scripts-descriptions": {
+        "checkall": "Run all checks including tests",
+        "lint": "Lint PHP files",
+        "test": "Run PHPUnit tests",
+        "test-report": "Run PHPUnit tests with coverage report",
+        "checkstyle": "Check code style using php_codesniffer",
+        "fixstyle": "Fix code style using php_codesniffer",
+        "checktype": "Check code type using PHPStan"
+    }
 }
