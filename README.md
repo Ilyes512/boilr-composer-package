@@ -20,6 +20,10 @@ task: Available tasks for this project:
 * update:       Update the boilr template
 ```
 
+## Links
+
+- VSCode [Sharing Git/GPG Credentials](https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials) with DevContainer
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
