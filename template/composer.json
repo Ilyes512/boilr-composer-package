@@ -9,6 +9,9 @@
     "license": "MIT",
     "require": {
         "php": ">=8.3"
+        {{- if AddAssertLib}},
+        "webmozart/assert": "^1.10"
+        {{- end}}
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
@@ -17,6 +20,9 @@
         "overtrue/phplint": "^9.3.0",
         "phpstan/phpstan": "^1.11",
         "phpstan/phpstan-mockery": "^1.1.0",
+        {{- if AddAssertLib}}
+        "phpstan/phpstan-webmozart-assert": "^1.2",
+        {{- end}}
         "phpunit/phpunit": "^11.1",
         "symfony/var-dumper": "^7.0"
     },
