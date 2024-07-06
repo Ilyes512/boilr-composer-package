@@ -22,7 +22,8 @@ task: Available tasks for this project:
 
 ## Links
 
-- VSCode [Sharing Git/GPG Credentials](https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials) with DevContainer
+- VSCode [Sharing Git/GPG Credentials](https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials)
+  with DevContainer
 
 ## License
 
