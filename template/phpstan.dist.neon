@@ -1,9 +1,5 @@
 includes:
 	- phpstan-baseline.neon
-	- vendor/phpstan/phpstan-mockery/extension.neon
-	{{- if AddAssertLib}}
-	- vendor/phpstan/phpstan-webmozart-assert/extension.neon
-	{{- end}}
 
 parameters:
 	level: max
@@ -11,4 +7,7 @@ parameters:
 	paths:
 		- src
 		- tests
-
+	stubFiles:
+		- stubs/BackedEnum.php.stub
+	# ignoreErrors:
+	# 	- '#^Enum .*? has @implements tag, but does not implement any interface.$#'
