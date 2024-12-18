@@ -1,6 +1,6 @@
 ARG IMAGE_REGISTRY_PHP
-ARG IMAGE_TAG_PHP_VSCODE
-FROM $IMAGE_REGISTRY_PHP:$IMAGE_TAG_PHP_VSCODE
+ARG IMAGE_TAG_PHP
+FROM $IMAGE_REGISTRY_PHP:$IMAGE_TAG_PHP
 
 ARG USER=code
 ARG GROUP=code
@@ -14,6 +14,14 @@ ENV FIXUID_VERSION=0.6.0
 
 RUN curl -fsSLo /tmp/fixuid.tar.gz "https://github.com/boxboat/fixuid/releases/download/v$FIXUID_VERSION/fixuid-${FIXUID_VERSION}-linux-${TARGETARCH}.tar.gz" \
     && tar -xf /tmp/fixuid.tar.gz -C /usr/local/bin fixuid
+
+RUN apt-get update \
+    && apt-get install --assume-yes --no-install-recommends \
+        openssh-client \
+        sudo \
+    && apt-get autoremove --assume-yes \
+    && apt-get clean --assume-yes \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN groupadd --gid "$USER_GID" "$USER" \
     && useradd --uid "$USER_UID" --gid "$USER_GID" --create-home "$USER" --shell /bin/bash \
