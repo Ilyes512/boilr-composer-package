@@ -50,7 +50,7 @@ tasks:
     desc: Start development environment
     cmds:
       - task: dc
-        vars: { DOCKER_COMPOSE_ARGS: "up -d" }
+        vars: { DOCKER_COMPOSE_ARGS: "up --detach" }
 
   stop:
     desc: Stop development environment
@@ -75,6 +75,7 @@ tasks:
     cmds:
       - task: down
       - task: down
+      - task: build
       - task: up
 
   ps:
@@ -82,7 +83,7 @@ tasks:
     aliases: [status]
     cmds:
       - task: dc
-        vars: { DOCKER_COMPOSE_ARGS: "ps -a" }
+        vars: { DOCKER_COMPOSE_ARGS: "ps --all" }
 
   shell:
     desc: Open shell in php container
