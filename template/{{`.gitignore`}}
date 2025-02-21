@@ -10,6 +10,6 @@
 /.phpunit.result.cache
 /.phplint.cache
 /.phpstan.cache
-/.phpcs-cache
+/.phpcs.cache
 /auth.json
 Taskfile.yml
